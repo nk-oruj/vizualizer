@@ -6,15 +6,16 @@
 
 #ifdef __unix__
 
-#include <sys/ioctl.h>
-#include <unistd.h>
+#include "sys/ioctl.h"
+#include "unistd.h"
 
 #elif defined(_WIN32) || defined(WIN32)
 
-#include <windows.h>
+#include "windows.h"
 
 #endif
 
+#include "stdlib.h"
 #include "stdio.h"
 #include "string.h"
 #include "stdarg.h"
@@ -29,8 +30,8 @@ void m_space_set(struct m_space *s)
 
     struct winsize w;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
-    col = w.ws_row;
-    row = w.ws_col;
+    col = w.ws_col;
+    row = w.ws_row;
 
 #elif defined(_WIN32) || defined(WIN32)
 
