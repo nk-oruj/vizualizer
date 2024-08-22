@@ -16,7 +16,7 @@ struct m_time _time;
 
 ////
 
-struct vec3 rot_angles;
+struct vec rot_angles;
 
 ////
 
@@ -43,31 +43,31 @@ int main()
         {
             for (float j = -1; j < 1; j += 0.04)
             {
-                calc_face(_space, 0, (struct vec3){+i, +j, -1}, (struct vec3){0, 0, -1}, rot_angles);
-                calc_face(_space, 1, (struct vec3){+1, +j, +i}, (struct vec3){+1, 0, 0}, rot_angles);
-                calc_face(_space, 2, (struct vec3){-1, +j, -i}, (struct vec3){-1, 0, 0}, rot_angles);
-                calc_face(_space, 3, (struct vec3){-i, +j, +1}, (struct vec3){0, 0, +1}, rot_angles);
-                calc_face(_space, 4, (struct vec3){+i, -1, -j}, (struct vec3){0, -1, 0}, rot_angles);
-                calc_face(_space, 5, (struct vec3){+i, +1, +j}, (struct vec3){0, +1, 0}, rot_angles);
+                calc_face(_space, 0, (struct vec){+i, +j, -1}, (struct vec){0, 0, -1}, rot_angles);
+                calc_face(_space, 1, (struct vec){+1, +j, +i}, (struct vec){+1, 0, 0}, rot_angles);
+                calc_face(_space, 2, (struct vec){-1, +j, -i}, (struct vec){-1, 0, 0}, rot_angles);
+                calc_face(_space, 3, (struct vec){-i, +j, +1}, (struct vec){0, 0, +1}, rot_angles);
+                calc_face(_space, 4, (struct vec){+i, -1, -j}, (struct vec){0, -1, 0}, rot_angles);
+                calc_face(_space, 5, (struct vec){+i, +1, +j}, (struct vec){0, +1, 0}, rot_angles);
             }
         }
 
         for (float i = 0; i < 1; i += 0.04)
         {
-            calc_edge(_space, i, (struct vec3){+1, +1, +1}, (struct vec3){+1, +1, -1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){+1, -1, +1}, (struct vec3){+1, -1, -1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){-1, +1, +1}, (struct vec3){-1, +1, -1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){-1, -1, +1}, (struct vec3){-1, -1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, +1, +1}, (struct vec){+1, +1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, -1, +1}, (struct vec){+1, -1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){-1, +1, +1}, (struct vec){-1, +1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){-1, -1, +1}, (struct vec){-1, -1, -1}, rot_angles);
 
-            calc_edge(_space, i, (struct vec3){+1, +1, +1}, (struct vec3){+1, -1, +1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){+1, +1, -1}, (struct vec3){+1, -1, -1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){-1, +1, +1}, (struct vec3){-1, -1, +1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){-1, +1, -1}, (struct vec3){-1, -1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, +1, +1}, (struct vec){+1, -1, +1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, +1, -1}, (struct vec){+1, -1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){-1, +1, +1}, (struct vec){-1, -1, +1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){-1, +1, -1}, (struct vec){-1, -1, -1}, rot_angles);
 
-            calc_edge(_space, i, (struct vec3){+1, +1, +1}, (struct vec3){-1, +1, +1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){+1, +1, -1}, (struct vec3){-1, +1, -1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){+1, -1, +1}, (struct vec3){-1, -1, +1}, rot_angles);
-            calc_edge(_space, i, (struct vec3){+1, -1, -1}, (struct vec3){-1, -1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, +1, +1}, (struct vec){-1, +1, +1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, +1, -1}, (struct vec){-1, +1, -1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, -1, +1}, (struct vec){-1, -1, +1}, rot_angles);
+            // calc_edge(_space, i, (struct vec){+1, -1, -1}, (struct vec){-1, -1, -1}, rot_angles);
         }
 
         m_space_write(&_space, 1, _space.height - 1, "Vizualizer.EXE | time: %f delta: %f width: %d height: %d  ", _time.now, _time.dlt, _space.width, _space.height);

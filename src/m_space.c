@@ -105,7 +105,7 @@ void frame_space_header(struct m_space *s)
 
 void frame_space_footer(struct m_space *s)
 {
-    printf("\x1b[H\x1b[2J%.*s", s->size, s->buffer);
+    printf("\x1b[H%.*s", s->size, s->buffer);
 }
 
 ////

@@ -11,7 +11,7 @@
 
 ////
 
-struct vec3
+struct vec
 {
     float x;
     float y;
@@ -20,22 +20,22 @@ struct vec3
 
 ////
 
-struct vec3 m_math_rotate(struct vec3 *res, struct vec3 vec, struct vec3 ang);
+struct vec m_math_rotate(struct vec *res, struct vec vec, struct vec ang);
 
-struct vec3 m_math_dot(float *res, struct vec3 a, struct vec3 b);
+struct vec m_math_dot(float *res, struct vec a, struct vec b);
 
-struct vec3 m_math_add(struct vec3 *res, struct vec3 a, struct vec3 b);
+struct vec m_math_add(struct vec *res, struct vec a, struct vec b);
 
-struct vec3 m_math_sub(struct vec3 *res, struct vec3 a, struct vec3 b);
+struct vec m_math_sub(struct vec *res, struct vec a, struct vec b);
 
-struct vec3 m_math_mul(struct vec3 *res, struct vec3 vec, float fac);
+struct vec m_math_mul(struct vec *res, struct vec vec, float fac);
 
-struct vec3 m_math_lerp(struct vec3 *res, struct vec3 a, struct vec3 b, float val);
+struct vec m_math_lerp(struct vec *res, struct vec a, struct vec b, float val);
 
 ////
 
-void calc_face(struct m_space space, int id, struct vec3 vec, struct vec3 nrm, struct vec3 ang);
+void calc_face(struct m_space space, int id, struct vec vec, struct vec nrm, struct vec ang);
 
-void calc_edge(struct m_space space, float val, struct vec3 a, struct vec3 b, struct vec3 ang);
+void calc_edge(struct m_space space, float val, struct vec a, struct vec b, struct vec ang);
 
 ////
